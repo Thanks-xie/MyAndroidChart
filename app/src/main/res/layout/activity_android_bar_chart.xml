@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AndroidBarChartActivity">
+    <!--标题-->
+    <include
+        android:id="@+id/re_bar"
+        layout="@layout/action_bar"/>
+    <!--LineChart之基础折线图-->
+    <RelativeLayout
+        android:layout_below="@+id/re_bar"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_marginTop="10dp"
+        android:id="@+id/re_barChart"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:onClick="onBarChartBaseClick">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BarChart之基础直方图"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:textSize="16dp"/>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/next"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

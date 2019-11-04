@@ -99,7 +99,8 @@ public class LineChartBaseActivity extends BaseActivity {
         xAxis.setDrawGridLines(false);
         xAxis.setDrawLabels(true);
         xAxis.setAvoidFirstLastClipping(true);
-        xAxis.setValueFormatter(Util.getQuarterValue());
+        xAxis.setLabelCount(4);
+        xAxis.setValueFormatter(Util.getQuarterValue(xAxis));
         xAxis.setGranularity(1f);
 
         //Y轴设置

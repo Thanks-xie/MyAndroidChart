@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/android_chart_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".activity.BarChartBaseActivity"></activity>
+        <activity android:name=".activity.AndroidBarChartActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.AndroidLineChartActivity" />
-        <activity android:name=".activity.LineChartBaseActivity"/>
+        <activity android:name=".activity.LineChartBaseActivity" />
     </application>
 
 </manifest>

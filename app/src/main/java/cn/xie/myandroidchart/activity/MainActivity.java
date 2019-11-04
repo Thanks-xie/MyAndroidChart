@@ -24,4 +24,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,AndroidLineChartActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * Android图表之BarChart
+     * @param view
+     */
+    public void onBarChartClick(View view) {
+        Intent intent = new Intent(this,AndroidBarChartActivity.class);
+        startActivity(intent);
+    }
 }
