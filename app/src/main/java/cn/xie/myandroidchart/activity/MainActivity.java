@@ -33,4 +33,22 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,AndroidBarChartActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * Android3D之指南针
+     * @param view
+     */
+    public void on3DWordClick(View view) {
+        Intent intent = new Intent(this,Android3DCompassActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Android3D之IChartJS
+     * @param view
+     */
+    public void onIChartJSClick(View view) {
+        Intent intent = new Intent(this,AndroidIChartJSActivity.class);
+        startActivity(intent);
+    }
 }

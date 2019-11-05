@@ -17,6 +17,11 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import cn.xie.myandroidchart.domain.Contact;
+
 /**
  * @author xiejinbo
  * @date 2019/11/4 0004 13:20
@@ -112,5 +117,20 @@ public class Util {
 
         barChart.setDescription(description);
         barChart.setExtraBottomOffset(40f);
+    }
+
+    /**
+     * 创建一个list将所需要的contact对象添加到list中
+     * @return
+     */
+    public static List<Contact> getContacts() {
+        List<Contact> contacts = new ArrayList<Contact>();
+        contacts.add(new Contact("IE", 32.85, "#a5c2d5"));
+        contacts.add(new Contact("Chrome", 33.59, "#cbab4f"));
+        contacts.add(new Contact("Firefox", 22.85, "#76a871"));
+        contacts.add(new Contact("Safari", 7.39, "#9f7961"));
+        contacts.add(new Contact("Opera", 1.63, "#a56f8f"));
+        contacts.add(new Contact("Other", 1.69, "#6f83a5"));
+        return contacts;
     }
 }

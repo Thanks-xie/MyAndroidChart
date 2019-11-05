@@ -62,5 +62,61 @@
             android:background="@mipmap/next"/>
 
     </RelativeLayout>
+    <!--Android3D之指南针-->
+    <RelativeLayout
+        android:layout_below="@+id/re_barChart"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_marginTop="10dp"
+        android:id="@+id/re_3DWord"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:onClick="on3DWordClick">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android3D之指南针"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:textSize="16dp"/>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/next"/>
+
+    </RelativeLayout>
+    <!--Android3D之IChartJS-->
+    <RelativeLayout
+        android:layout_below="@+id/re_3DWord"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_marginTop="10dp"
+        android:id="@+id/re_ichartjs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:onClick="onIChartJSClick">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android3D之IChartJS"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:textSize="16dp"/>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/next"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

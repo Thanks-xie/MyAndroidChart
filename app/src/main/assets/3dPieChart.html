@@ -1,0 +1,54 @@
+<html>  
+    <head>  
+        <meta charset="UTF-8" />  
+        <title>3D饼状图</title>  
+        <meta name="Description" content="" />  
+        <meta name="Keywords" content="" />  
+        <script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+        <script type="text/javascript" >  
+          
+        $(function(){  
+            var data = new Array();  
+            var contact = window.AndroidIChartJSActivity.get3DPieCharContacts(); //获得数据  
+            eval('data='+contact); //执行数据的赋值  
+      
+            var title = window.Pie3DChart.getTitle(); //获得标题
+            var width = window.Pie3DChart.getPieWidth() //获得宽度
+            var height = window.Pie3DChart.getPieHeight(); //获得高度
+            var radius = window.Pie3DChart.getPieRadius(); //获得半径
+            var yHeight = window.Pie3DChart.getPieZHigh(); //获得厚度
+              
+            var footnote = window.Pie3DChart.getFootnote(); //获得脚注
+              
+            var align = window.Pie3DChart.getAlign(); //获得图例的水平对齐方式
+            var valign = window.Pie3DChart.getvAlign(); //获得图例的垂直对齐方式
+            var row = window.Pie3DChart.getRow(); //获得图例的行数
+              
+            new iChart.Pie3D({  
+                render : 'canvasDiv',  
+                data: data,  
+                title : title,  
+                width : width,  
+                height : height,  
+                footnote : footnote,
+                offsetx:10,
+                legend : {  
+                    enable : true,  
+                    align : align,  
+                    valign : valign,  
+                    row:row,  
+                    column:'max'  
+                },  
+                showpercent:true,  
+                decimalsnum:2,  
+                yHeight:yHeight,  
+                radius:radius,  
+            }).draw();  
+        });  
+        </script>  
+    </head>  
+    <body >  
+        <div id='canvasDiv'>  
+        </div>  
+    </body>  
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.Android3DCompassActivity"
+    android:background="@android:color/holo_blue_dark">
+
+    <include android:id="@+id/nav_bar"
+        layout="@layout/action_bar"/>
+
+    <cn.xie.myandroidchart.views.Compass3DView
+        android:layout_marginTop="100dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/compass_3d"
+        android:layout_below="@+id/nav_bar"
+        android:layout_width="300dp"
+        android:layout_height="300dp">
+
+    </cn.xie.myandroidchart.views.Compass3DView>
+
+</RelativeLayout>

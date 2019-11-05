@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/android_chart_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.BarChartBaseActivity"></activity>
+        <activity android:name=".activity.AndroidIChartJSActivity"></activity>
+        <activity android:name=".activity.Android3DCompassActivity" />
+        <activity android:name=".activity.BarChartBaseActivity" />
         <activity android:name=".activity.AndroidBarChartActivity" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
