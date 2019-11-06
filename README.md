@@ -13,7 +13,7 @@
 <br/><br/>
 
 ### 3D指南针，可旋转
-![alt tag](https://github.com/Thanks-xie/MyAndroidChart/blob/master/rendering_image/指南针.png)
+![alt tag](https://github.com/Thanks-xie/MyAndroidChart/blob/master/rendering_image/compass3d.png)
 <br/><br/>
 
 ### 基于IChartJS实现的3D直方图和饼状图
