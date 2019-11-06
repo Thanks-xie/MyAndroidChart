@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Hello World</title>
-    <meta name="Description" content="" />
-    <meta name="Keywords" content="" />
+    <meta name="Description" content=""/>
+    <meta name="Keywords" content=""/>
     <script type="text/javascript" src="ichart.1.2.1.min.js"></script>
     <script type="text/javascript">
             var data = new Array();
@@ -15,33 +15,67 @@ $(function(){
     new iChart.Column3D({
         render : 'canvasDiv', //渲染的Dom目标,canvasDiv为Dom的ID
         data: data, //绑定数据
-        title : 'Top 5 Browsers in August 2012', //设置标题
+        title: {
+            text : 'Top 5 Browsers in August 2012',
+            font: 'sans-serif',
+            fontsize:18,
+            fontweight:600,
+            color: '#D81B60'
+        },
+         tip : {
+            enable : true,  //是否开启提示框
+            animation : true,
+            fade_duration: 500
+        },
         showpercent:true, //显示百分比
         decimalsnum:2,
-        width : 400, //设置宽度，默认单位为px
-        height : 300, //设置高度，默认单位为px
+        width : 800, //设置宽度，默认单位为px
+        height : 600, //设置高度，默认单位为px
         align:'left',
         offsetx:30,
         legend : {
-            enable : true
+            enable : true,
+            color: '#008577'
+        },
+        animation: true, //是否开启动画
+        label:{
+            rotate:45,
+            textBaseline:'middle',
+            textAlign:'left',
+            color: '#008577'
         },
         coordinate:{ //配置自定义坐标轴
+        wall_style:[
+{color : '#333333'},
+{color : '#b2b2d3'},  
+{color : '#a6a6cb'},
+{color : '#333333'},
+{color : '#74749b'},
+   {color : '#a6a6cb'},
+{alpha :0}
+],
+
             scale:[{ //配置自定义值轴
                  width:400,
                  position:'left', //配置左值轴
                  start_scale:0, //设置开始刻度为0
                  end_scale:40, //设置结束刻度为40
                  scale_space:8, //设置刻度间距为8
+                 scale_color:'#D81B60', //刻度线颜色
+                 //scale_enable:true, //是否显示刻度线
+                 //scale2grid:true, //是否按照刻度画网格参考线。
                  listeners:{ //配置事件
                     parseText:function(t,x,y){ //设置解析值轴文本
                         return {text:t+"%"}
                     }
                 }
+
             }]
         }
     }).draw(); //调用绘图方法开始绘图
 });
-            </script>
+
+    </script>
 </head>
 <body>
 <p id='canvasDiv'></p>

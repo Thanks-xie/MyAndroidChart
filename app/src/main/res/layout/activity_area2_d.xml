@@ -5,24 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.AndroidIChartJSActivity">
+    tools:context=".activity.Area2DActivity">
 
     <include android:id="@+id/nav_bar"
         layout="@layout/action_bar"/>
 
     <WebView
-        android:id="@+id/weView_barChart3D"
+        android:id="@+id/webView_area2d"
         android:layout_below="@+id/nav_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:background="@android:color/white"
-        android:layout_margin="10dp"/>
-    <WebView
-        android:id="@+id/weView_pieChart3D"
-        android:layout_below="@+id/weView_barChart3D"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:layout_margin="10dp"/>
+        android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>

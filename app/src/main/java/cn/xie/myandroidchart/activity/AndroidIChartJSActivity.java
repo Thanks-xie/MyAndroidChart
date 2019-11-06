@@ -42,30 +42,34 @@ public class AndroidIChartJSActivity extends BaseActivity {
         barChart3D = findViewById(R.id.weView_barChart3D);
         barChart3D.getSettings().setJavaScriptEnabled(true); // 允许使用javascript脚本语言
         barChart3D.getSettings().setBuiltInZoomControls(true); // 设置可以缩放
-        // 设置javaScript可用于操作MainActivity类
+        // 设置javaScript可用于操作AndroidIChartJSActivity类
         barChart3D.addJavascriptInterface(this,TAG);
         barChart3D.loadUrl("file:///android_asset/3dBarChart.html");
+        //设置自适应屏幕，两者合用
+        barChart3D.getSettings().setUseWideViewPort(true); //将图片调整到适合webview的大小
+        barChart3D.getSettings().setLoadWithOverviewMode(true); // 缩放至屏幕的大小
 
 
         initPie3DChart();
         pieChart3D = findViewById(R.id.weView_pieChart3D);
         pieChart3D.getSettings().setJavaScriptEnabled(true); // 允许使用javascript脚本语言
         pieChart3D.getSettings().setBuiltInZoomControls(true); // 设置可以缩放
-        // 设置javaScript可用于操作MainActivity类
+        // 设置javaScript可用于操作AndroidIChartJSActivity类，用于JS调用本类方法
         pieChart3D.addJavascriptInterface(this,TAG);
-
+        //设置javaScript可用于操作Pie3DChart类，用于JS调用Pie3DChart类方法
         pieChart3D.addJavascriptInterface(pie3DChart,"Pie3DChart");
-
         pieChart3D.loadUrl("file:///android_asset/3dPieChart.html");
+        pieChart3D.getSettings().setUseWideViewPort(true); //将图片调整到适合webview的大小
+        pieChart3D.getSettings().setLoadWithOverviewMode(true); // 缩放至屏幕的大小
     }
 
     private void initPie3DChart() {
         pie3DChart = new Pie3DChart();
         pie3DChart.setTitle("2012年7月份中国浏览器市场占有率Top6");
-        pie3DChart.setPieWidth(350);
-        pie3DChart.setPieHeight(300);
-        pie3DChart.setPieRadius(50);
-        pie3DChart.setPieZHigh(20);
+        pie3DChart.setPieWidth(800);
+        pie3DChart.setPieHeight(600);
+        pie3DChart.setPieRadius(250);
+        pie3DChart.setPieZHigh(40);
         pie3DChart.setAlign("right");
         pie3DChart.setFootnote("Data from StatCounter");
         pie3DChart.setvAlign("bottom");
@@ -73,7 +77,7 @@ public class AndroidIChartJSActivity extends BaseActivity {
     }
 
     /**
-     * 实现将list转换成json格式字符串
+     * 实现将list转换成json格式字符串，由JS调用此方法
      * @return json格式的字符串
      */
     @JavascriptInterface
@@ -92,14 +96,13 @@ public class AndroidIChartJSActivity extends BaseActivity {
             }
             json = array.toString();
             Log.i(TAG, json);
-            // webView.loadUrl("javascript:show('" + json + "')");
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return json;
     }
     /**
-     * 实现将list转换成json格式字符串
+     * 实现将list转换成json格式字符串，由JS调用此方法
      * @return json格式的字符串
      */
     @JavascriptInterface
@@ -118,7 +121,6 @@ public class AndroidIChartJSActivity extends BaseActivity {
             }
             json = array.toString();
             Log.i(TAG, json);
-            // webView.loadUrl("javascript:show('" + json + "')");
         } catch (JSONException e) {
             e.printStackTrace();
         }

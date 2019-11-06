@@ -51,4 +51,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,AndroidIChartJSActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * 基于IChartJS实现Android图表
+     * @param view
+     */
+    public void onIChartJSListClick(View view) {
+        Intent intent = new Intent(this,IChartJSActivity.class);
+        startActivity(intent);
+    }
 }
