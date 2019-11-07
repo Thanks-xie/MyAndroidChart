@@ -192,6 +192,6 @@ public class Util {
         //设置自适应屏幕，两者合用
         webView.getSettings().setUseWideViewPort(true); //将图片调整到适合webview的大小
         webView.getSettings().setLoadWithOverviewMode(true); // 缩放至屏幕的大小
-        webView.loadUrl("file:///android_asset/"+tag+".html");
+
     }
 }

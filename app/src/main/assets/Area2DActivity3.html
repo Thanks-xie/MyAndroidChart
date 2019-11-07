@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello World</title>
+    <meta name="Description" content=""/>
+    <meta name="Keywords" content=""/>
+    <script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+    <script type="text/javascript">
+            //获取data值
+            var getData03_1 = new Object();
+            var contact = window.Area2DActivity.getContacts03_1(); //得到MainActivity中转换出的json字符串
+            eval('getData03_1='+contact); //各个节点数据
+            window.Area2DActivity.logOut("getData03_1="+getData03_1.name);
+
+            //获取data值
+            var getData03_2 = new Object();
+            var contact = window.Area2DActivity.getContacts03_2();
+            eval('getData03_2='+contact); //各个节点数据
+            window.Area2DActivity.logOut("getData03_2="+getData03_2.name);
+            //获取data值
+            var getData03_3 = new Object();
+            var contact = window.Area2DActivity.getContacts03_3();
+            eval('getData03_3='+contact); //各个节点数据
+            window.Area2DActivity.logOut("getData03_3="+getData03_3.name);
+            //获取data值
+            var getData03_4 = new Object();
+            var contact = window.Area2DActivity.getContacts03_4();
+            eval('getData03_4='+contact); //各个节点数据
+            window.Area2DActivity.logOut("getData03_4="+getData03_4.name);
+
+            //获取X轴值
+            var labels = new Array();
+            var x_labels = window.Area2DActivity.getLabels();
+            eval('labels='+x_labels);
+            window.Area2DActivity.logOut("labels="+labels);
+
+           $(function(){
+                //创建数据
+                var data = [
+                            {
+                                name :getData03_1.name,
+                                value:getData03_1.value,
+                                color:getData03_1.color,
+                                line_width:getData03_1.line_width
+                            },{
+                                name :getData03_2.name,
+                                value:getData03_2.value,
+                                color:getData03_2.color,
+                                line_width:getData03_2.line_width
+                            },{
+                                name :getData03_3.name,
+                                value:getData03_3.value,
+                                color:getData03_3.color,
+                                line_width:getData03_3.line_width
+                            },{
+                                name :getData03_4.name,
+                                value:getData03_4.value,
+                                color:getData03_4.color,
+                                line_width:getData03_4.line_width
+                            }
+                       ];
+                /*//创建x轴标签文本
+                var labels = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
+                   */
+                var chart = new iChart.Area2D({
+					render : 'canvasDiv',
+					data: data,
+					animation: true, //是否开启动画
+					background_color:'#f2f2f2',
+					title : '四城市2012年平均温度情况',
+					width : 800,
+					height : 400,
+					area_opacity:0.15,
+					legend : {
+						enable : true
+					},
+					tip:{
+						enable : true,
+						listeners:{
+							 //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+							parseText:function(tip,name,value,text,i){
+								return "<span style='color:#005268;font-size:11px;font-weight:600;'>"+name+
+										"</span>&nbsp;<span style='color:#005268;font-size:20px;font-weight:600;'>"+value+"℃</span>";
+							}
+						}
+					},
+					sub_option:{
+						label:false
+					},
+					crosshair:{
+						enable:true,
+						line_color:'#62bce9'
+					},
+					coordinate:{
+						axis : {
+							width : [0, 0, 2, 0]
+						},
+						background_color:'#ffffff',
+						valid_width:'94%',
+						height : 260,
+						scale2grid:false,
+						grids:{
+							horizontal:{
+									way:'share_alike',
+									value:8
+								}
+							},
+						scale:[{
+							 position:'left',
+							 start_scale:0,
+							 end_scale:40,
+							 scale_space:5,
+							 listeners:{
+								parseText:function(t,x,y){
+									return {text:t+"℃"}
+								}
+							}
+						},{
+							 position:'bottom',
+							 start_scale:1,
+							 end_scale:12,
+							 parseText:function(t,x,y){
+								return {textY:y+10}
+							 },
+							 labels:labels
+						}]
+					}
+				});
+				chart.draw();
+            });
+</script>
+</head>
+<body>
+<p id='canvasDiv'></p>
+</body>
+</html>

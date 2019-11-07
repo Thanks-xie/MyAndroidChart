@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello World</title>
+    <meta name="Description" content=""/>
+    <meta name="Keywords" content=""/>
+    <script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+    <script type="text/javascript">
+            //获取data值
+            var getData02_1 = new Object();
+            var contact = window.Area2DActivity.getContacts02_1(); //得到MainActivity中转换出的json字符串
+            eval('getData02_1='+contact); //各个节点数据
+            window.Area2DActivity.logOut("getData02_1="+getData02_1.name);
+
+            //获取data值
+            var getData02_2 = new Object();
+            var contact = window.Area2DActivity.getContacts02_2(); //得到MainActivity中转换出的json字符串
+            eval('getData02_2='+contact); //各个节点数据
+            window.Area2DActivity.logOut("getData02_2="+getData02_2.name);
+
+            //获取X轴值
+            var labels = new Array();
+            var x_labels = window.Area2DActivity.getLabels();
+            eval('labels='+x_labels);
+            window.Area2DActivity.logOut("labels="+labels);
+
+           $(function(){
+                //创建数据
+                var data = [
+                            {
+                                name :getData02_1.name,
+                                value:getData02_1.value,
+                                color:getData02_1.color,
+                                line_width:getData02_1.line_width
+                            },{
+                                name :getData02_2.name,
+                                value:getData02_2.value,
+                                color:getData02_2.color,
+                                line_width:getData02_2.line_width
+                            }
+                       ];
+                /*//创建x轴标签文本
+                var labels = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
+                   */
+                var chart = new iChart.Area2D({
+				render : 'canvasDiv',
+				data: data,
+				animation: true, //是否开启动画
+				title : '北京-上海两城市2012年平均温度情况',
+				width : 800,
+				height : 400,
+				legend : {
+					enable : true,
+					row:1,//设置在一行上显示，与column配合使用
+					column : 'max',
+					valign:'top',
+					background_color:null,//设置透明背景
+					offsetx:-30,//设置x轴偏移，满足位置需要
+					border : false
+				},
+				tip:{
+					enable : true,
+					listeners:{
+						 //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+						parseText:function(tip,name,value,text,i){
+							return name+"地区<br/>:"+labels[i]+"平均温度:"+value+"℃";
+						}
+					}
+				},
+				crosshair:{
+					enable:true,
+					line_color:'#62bce9',
+					line_width:2
+				},
+				sub_option:{
+					label:false,
+					point_size:10
+				},
+				background_color:'#f2f2f2',
+				coordinate:{
+					axis : {
+						width : [0, 0, 2, 0]
+					},
+					background_color:'#ffffff',
+					height:'90%',
+					scale:[{
+						 position:'left',
+						 scale_space:5,
+						 scale_enable:false,//禁用小横线
+						 listeners:{
+							parseText:function(t,x,y){
+								return {text:t+"℃"}
+							}
+						}
+					},{
+						 position:'bottom',
+						 start_scale:1,
+						 end_scale:12,
+						 parseText:function(t,x,y){
+							return {textY:y+10}
+						 },
+						 labels:labels
+					}]
+				}
+			});
+			chart.draw();
+            });
+</script>
+</head>
+<body>
+<p id='canvasDiv'></p>
+</body>
+</html>

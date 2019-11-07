@@ -19,6 +19,12 @@
             eval('labels='+x_labels);
             window.Area2DActivity.logOut("labels="+labels);
 
+            //获取data值
+            var getTitle = new Object();
+            var contact = window.Area2DActivity.getArea2DTitle1();
+            eval('getTitle='+contact);
+            window.Area2DActivity.logOut("getTitle="+getTitle.text);
+
            $(function(){
                 //创建数据
                 var data = [
@@ -37,14 +43,14 @@
                         data: data,
                         animation: true, //是否开启动画
                         title:{
-                            text:'A产品2019年度订单数据分析',
-                            color:'#eff4f8',
-                            background_color:'#1c4156',
-                            height:40,
+                            text:getTitle.text,
+                            color:getTitle.color,
+                            background_color:getTitle.background_color,
+                            height:getTitle.height,
                             border:{
-                                enable:true,
-                                width:[0,0,4,0],//只显示下边框
-                                color:'#173a4e'
+                                enable:getTitle.border.enable,
+                                width:getTitle.border.width,//只显示下边框
+                                color:getTitle.border.color
                             }
                         },
                         subtitle:{
