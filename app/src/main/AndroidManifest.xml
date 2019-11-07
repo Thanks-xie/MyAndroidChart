@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/android_chart_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Area2DActivity"></activity>
+        <activity android:name=".activity.BarStacked2DActivity"></activity>
+        <activity android:name=".activity.BarMulti2DActivity" />
+        <activity android:name=".activity.Bar2DActivity" />
+        <activity android:name=".activity.Area2DActivity" />
         <activity android:name=".activity.IChartJSActivity" />
         <activity android:name=".activity.AndroidIChartJSActivity" />
         <activity android:name=".activity.Android3DCompassActivity" />

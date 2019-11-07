@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Hello World</title>
+		<meta name="Description" content=""/>
+		<meta name="Keywords" content=""/>
+		<script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+		<script type="text/javascript">//获取data值
+            var data = new Array();
+            var contact = window.Bar2DActivity.getContact1_1(); //得到MainActivity中转换出的json字符串
+            eval('data='+contact); //各个节点数据
+            window.Bar2DActivity.logOut("data="+contact);
+
+		$(function(){
+			/*var data = [
+			        	{name : 'IE',value : 35.75,color:'#a5c2d5'},
+			        	{name : 'Chrome',value : 29.84,color:'#cbab4f'},
+			        	{name : 'Firefox',value : 24.88,color:'#76a871'},
+			        	{name : 'Safari',value : 6.77,color:'#9f7961'},
+			        	{name : 'Opera',value : 2.02,color:'#a56f8f'},
+			        	{name : 'Other',value : 0.73,color:'#6f83a5'}
+		        	];*/
+        	
+			new iChart.Bar2D({
+				render : 'canvasDiv',
+				data: data,
+				animation: true, //是否开启动画
+				background_color:'#f2f2f2',
+				title : 'Top 5 Browsers from 1 to 29 Feb 2012',
+				showpercent:true,
+				decimalsnum:2,
+				width : 800,
+				height : 400,
+				coordinate:{
+					scale:[{
+						 position:'bottom',	
+						 start_scale:0,
+						 end_scale:40,
+						 scale_space:8,
+						 listeners:{
+							parseText:function(t,x,y){
+								return {text:t+"%"}
+							}
+						}
+					}]
+				},
+				tip:{
+						enable : true,
+						listeners:{
+							 //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+							parseText:function(tip,name,value,text,i){
+								return "<span style='color:#005268;font-size:16px;font-weight:600;'>"+name+
+										":</span>&nbsp;&nbsp;<span style='color:#005268;font-size:20px;font-weight:600;'>"+value+"%</span>";
+							}
+						}
+					}
+			}).draw();
+	});
+	</script>
+</head>
+	<body>
+	<p id='canvasDiv'></p>
+	</body>
+</html>

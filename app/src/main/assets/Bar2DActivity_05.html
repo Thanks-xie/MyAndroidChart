@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Hello World</title>
+		<meta name="Description" content=""/>
+		<meta name="Keywords" content=""/>
+		<script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+		<script type="text/javascript">//获取data值
+            var data = new Array();
+            var contact = window.Bar2DActivity.getContact5_1(); //得到MainActivity中转换出的json字符串
+            eval('data='+contact); //各个节点数据
+            window.Bar2DActivity.logOut("data="+contact);
+
+		/*var data = [
+			        	{name : 'Google',value : 91.17,color:'#a5c2d5'},
+			        	{name : 'bing',value : 3.22,color:'#cbab4f'},
+			        	{name : 'Yahoo!',value : 2.95,color:'#76a871'},
+			        	{name : 'Babylon',value : 0.54,color:'#9f7961'},
+			        	{name : 'Baidu',value : 0.45,color:'#a56f8f'},
+			        	{name : 'Other',value : 1.67,color:'#db9034'}
+		        	];*/
+					$(function(){
+						new iChart.Bar2D({
+								render : 'canvasDiv',
+								animation: true, //是否开启动画
+								data: data,
+								title : '2012年7月份全球搜索引擎Top5',
+								footnote : 'Data from StatCounter',
+								width : 800,
+								height : 400,
+								coordinate:{
+									width:640,
+									height:280,
+									scale:[{
+										 position:'bottom',
+										 start_scale:0,
+										 end_scale:100,
+										 scale_space:10,
+										 listeners:{
+											parseText:function(t,x,y){
+												return {text:t+"%"}
+											}
+										 }
+									}]
+								},
+								rectangle:{
+									listeners:{
+										drawText:function(r,t){
+											return t+"%";
+										}
+									}
+								}
+						}).draw();
+					});
+	</script>
+</head>
+	<body>
+	<p id='canvasDiv'></p>
+	</body>
+</html>

@@ -144,7 +144,7 @@ public class Util {
      * @return
      */
     public static String getIChartJSData() {
-        int[] values = {2680,2200,1014,2590,2800,3200,2184,3456,2693,2064,2414,2044};
+        double[] values = {2680,2200,1014,2590,2800,3200,2184,3456,2693,2064,2414,2044};
         IChartData iChartData = new IChartData();
         iChartData.setLine_width(2);
         iChartData.setName("A产品");

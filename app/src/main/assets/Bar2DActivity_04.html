@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Hello World</title>
+		<meta name="Description" content=""/>
+		<meta name="Keywords" content=""/>
+		<script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+		<script type="text/javascript">//获取data值
+            var data = new Array();
+            var contact = window.Bar2DActivity.getContact4_1(); //得到MainActivity中转换出的json字符串
+            eval('data='+contact); //各个节点数据
+            window.Bar2DActivity.logOut("data="+contact);
+
+		$(function(){
+				/*var data = [
+				        	{name : 'Renren',value : 33.1,color:'#b5bcc5'},
+				        	{name : 'Facebook',value : 19.14,color:'#b5bcc5'},
+				        	{name : 'StumbleUpon',value : 13.97,color:'#b5bcc5'},
+				        	{name : 'reddit',value : 7.44,color:'#b5bcc5'},
+				        	{name : 'Hi5',value : 5.22,color:'#b5bcc5'},
+				        	{name : 'LinkedIn',value : 4.85,color:'#b5bcc5'},
+				        	{name : 'Twitter',value : 4.59,color:'#b5bcc5'},
+				        	{name : 'Other',value : 11.68,color:'#b5bcc5'}
+			        	];*/
+
+				new iChart.Bar2D({
+					render : 'canvasDiv',
+					animation: true, //是否开启动画
+					data: data,
+					title : {
+						text:'StatCounter Global Stats',
+						color:'#b5bcc5'
+					},
+					subtitle : {
+						text:'Top 7 Social Media Sites in Chain from Oct 2011 to Oct 2012',
+						color:'#afb6c0'
+					},
+					footnote : 'Data from StatCounter',
+					width : 800,
+					height : 400,
+					offsetx:20,
+					coordinate:{
+						width:620,
+						height:240,
+						grid_color:'#4e5464',
+						axis:{
+							color:'#4e5464',
+							width:[0,0,8,1]
+						},
+						scale:[{
+							 position:'bottom',
+							 start_scale:0,
+							 end_scale:40,
+							 scale_space:5,
+							 label:{color:'#ffffff'},
+							 listeners:{
+								parseText:function(t,x,y){
+									return {text:t+"%"}
+								}
+							 }
+						}]
+					},
+					label:{color:'#dcdcdc'},
+					background_color : '#3c4251',
+					sub_option:{
+						listeners:{
+							parseText:function(r,t){
+								return t+"%";
+							}
+						}
+					},
+					legend:{enable:false}
+				}).draw();
+			});
+	</script>
+</head>
+	<body>
+	<p id='canvasDiv'></p>
+	</body>
+</html>

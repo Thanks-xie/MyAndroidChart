@@ -11,13 +11,13 @@ public class IChartData {
     private String name;  //name值
     private String color; //折线颜色和区域背景色
     private int line_width; //折线宽度
-    private int[] value; //折线节点值
+    private double[] value; //折线节点值
     @JavascriptInterface
-    public int[] getValue() {
+    public double[] getValue() {
         return value;
     }
 
-    public void setValue(int[] value) {
+    public void setValue(double[] value) {
         this.value = value;
     }
     @JavascriptInterface

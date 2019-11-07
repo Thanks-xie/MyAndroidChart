@@ -68,7 +68,7 @@ public class Area2DActivity extends BaseActivity {
      */
     @JavascriptInterface
     public String getContacts02_1(){
-        int[] values = {4,16,18,24,32,36,38,38,36,26,20,14};
+        double[] values = {4,16,18,24,32,36,38,38,36,26,20,14};
         IChartData iChartData02_1 = new IChartData();
         iChartData02_1.setLine_width(2);
         iChartData02_1.setName("上海");
@@ -82,7 +82,7 @@ public class Area2DActivity extends BaseActivity {
      */
     @JavascriptInterface
     public String getContacts02_2(){
-        int[] values = {-9,1,12,20,26,30,32,29,22,12,0,-6};
+        double[] values = {-9,1,12,20,26,30,32,29,22,12,0,-6};
         IChartData iChartData02_2 = new IChartData();
         iChartData02_2.setLine_width(2);
         iChartData02_2.setName("北京");
@@ -119,7 +119,7 @@ public class Area2DActivity extends BaseActivity {
      */
     @JavascriptInterface
     public String getContacts03_1(){
-        int[] values = {4,16,18,20,32,36,38,38,36,26,20,14};
+        double[] values = {4,16,18,20,32,36,38,38,36,26,20,14};
         IChartData iChartData03_1 = new IChartData();
         iChartData03_1.setLine_width(2);
         iChartData03_1.setName("上海");
@@ -133,7 +133,7 @@ public class Area2DActivity extends BaseActivity {
      */
     @JavascriptInterface
     public String getContacts03_2(){
-        int[] values = {2,12,14,20,28,32,34,36,33,24,14,4};
+        double[] values = {2,12,14,20,28,32,34,36,33,24,14,4};
         IChartData iChartData03_2 = new IChartData();
         iChartData03_2.setLine_width(2);
         iChartData03_2.setName("北京");
@@ -147,7 +147,7 @@ public class Area2DActivity extends BaseActivity {
      */
     @JavascriptInterface
     public String getContacts03_3(){
-        int[] values = {1,12,18,20,28,34,36,34,31,27,24,6};
+        double[] values = {1,12,18,20,28,34,36,34,31,27,24,6};
         IChartData iChartData03_3 = new IChartData();
         iChartData03_3.setLine_width(2);
         iChartData03_3.setName("西安");
@@ -161,7 +161,7 @@ public class Area2DActivity extends BaseActivity {
      */
     @JavascriptInterface
     public String getContacts03_4(){
-        int[] values = {3,13,14,20,28,32,34,36,30,24,14,4};
+        double[] values = {3,13,14,20,28,32,34,36,30,24,14,4};
         IChartData iChartData03_4 = new IChartData();
         iChartData03_4.setLine_width(2);
         iChartData03_4.setName("天津");

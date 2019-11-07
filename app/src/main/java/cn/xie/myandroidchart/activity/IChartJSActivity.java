@@ -66,10 +66,16 @@ public class IChartJSActivity extends BaseActivity {
                         startActivity(intent);
                         break;
                     case "Bar2D":
+                        Intent intentBar2D = new Intent(context,Bar2DActivity.class);
+                        startActivity(intentBar2D);
                         break;
                     case "BarMulti2D":
+                        Intent BarMulti2D = new Intent(context,BarMulti2DActivity.class);
+                        startActivity(BarMulti2D);
                         break;
                     case "BarStacked2D":
+                        Intent BarStacked2D = new Intent(context,BarStacked2DActivity.class);
+                        startActivity(BarStacked2D);
                         break;
                     case "Column2D":
                         break;

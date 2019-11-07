@@ -1,5 +1,7 @@
 package cn.xie.myandroidchart.domain;
 
+import android.webkit.JavascriptInterface;
+
 /**
  * 封装数据的实体类
  * @author xiejinbo
@@ -23,18 +25,21 @@ public class Contact {
     }
 
     // 下面是三个实例变量的getters and setters
+    @JavascriptInterface
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
     }
+    @JavascriptInterface
     public double getValue() {
         return value;
     }
     public void setValue(double value) {
         this.value = value;
     }
+    @JavascriptInterface
     public String getColor() {
         return color;
     }

@@ -27,3 +27,15 @@
 ### 基于IChartJS实现的2D面积图(单一数据源+多数据源+多点重合数据源)
 ![alt tag](https://github.com/Thanks-xie/MyAndroidChart/blob/master/rendering_image/area2d.png)
 <br/><br/>
+
+### 基于IChartJS实现的Bar2D条形图
+![alt tag](https://github.com/Thanks-xie/MyAndroidChart/blob/master/rendering_image/bar2d.png)
+<br/><br/>
+
+### 基于IChartJS实现的BarMulti2D之多数据条形图
+![alt tag](https://github.com/Thanks-xie/MyAndroidChart/blob/master/rendering_image/barMulti2d.png)
+<br/><br/>
+
+### 基于IChartJS实现的BarStacked2D之簇状图
+![alt tag](https://github.com/Thanks-xie/MyAndroidChart/blob/master/rendering_image/barStacked2d.png)
+<br/><br/>
