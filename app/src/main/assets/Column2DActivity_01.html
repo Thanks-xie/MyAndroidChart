@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Hello World</title>
+		<meta name="Description" content=""/>
+		<meta name="Keywords" content=""/>
+		<script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+		<script type="text/javascript">
+		//获取data值
+            var data = new Array();
+            var contact = window.Column2DActivity.getContact1_1();
+            eval('data='+contact);
+            window.Column2DActivity.logOut("data="+contact);
+
+		$(function(){
+					/*var data = [
+					        	{name : 'IE',value : 35.75,color:'#a5c2d5'},
+					        	{name : 'Chrome',value : 29.84,color:'#cbab4f'},
+					        	{name : 'Firefox',value : 24.88,color:'#76a871'},
+					        	{name : 'Safari',value : 6.77,color:'#9f7961'},
+					        	{name : 'Opera',value : 2.02,color:'#a56f8f'},
+					        	{name : 'Other',value : 0.73,color:'#6f83a5'}
+				        	];*/
+
+					new iChart.Column2D({
+						render : 'canvasDiv',
+						animation: true, //是否开启动画
+						data: data,
+						title : 'Top 5 Browsers from 1 to 29 Feb 2012',
+						showpercent:true,
+						decimalsnum:2,
+						width : 800,
+						height : 400,
+						coordinate:{
+							background_color:'#fefefe',
+							scale:[{
+								 position:'left',
+								 start_scale:0,
+								 end_scale:40,
+								 scale_space:8,
+								 listeners:{
+									parseText:function(t,x,y){
+										return {text:t+"%"}
+									}
+								}
+							}]
+						}
+					}).draw();
+			});
+	</script>
+</head>
+	<body>
+	<p id='canvasDiv'></p>
+	</body>
+</html>

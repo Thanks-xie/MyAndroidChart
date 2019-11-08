@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Hello World</title>
+		<meta name="Description" content=""/>
+		<meta name="Keywords" content=""/>
+		<script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+		<script type="text/javascript">
+		//获取data1值
+            var data_1 = new Object();
+            var contact = window.LineBasic2DActivity.getContact1_1();
+            eval('data_1='+contact); //各个节点数据
+            window.LineBasic2DActivity.logOut("data_1="+data_1.name);
+
+		$(function(){
+			var data = [
+			        	{
+			        		name : data_1.name,
+			        		value: data_1.value,
+			        		color: data_1.color,
+			        		line_width: data_1.line_width
+			        	}
+			       ];
+			var chart = new iChart.LineBasic2D({
+						render : 'canvasDiv',
+						animation: true, //是否开启动画
+						data: data,
+						title : '北京2012年平均温度情况',
+						width : 800,
+						height : 400,
+						coordinate:{height:'90%',background_color:'#f6f9fa'},
+						sub_option:{
+							hollow_inside:false,//设置一个点的亮色在外环的效果
+							point_size:16
+						},
+						labels:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]
+					});
+			chart.draw();
+		});
+	</script>
+</head>
+	<body>
+	<p id='canvasDiv'></p>
+	</body>
+</html>

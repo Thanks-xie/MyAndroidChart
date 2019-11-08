@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Hello World</title>
+		<meta name="Description" content=""/>
+		<meta name="Keywords" content=""/>
+		<script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+		<script type="text/javascript">
+		//获取data1值
+            var data_1 = new Object();
+            var contact = window.ColumnStacked2DActivity.getContact2_1();
+            eval('data_1='+contact); //各个节点数据
+            window.ColumnStacked2DActivity.logOut("data_1="+data_1.name);
+		//获取data2值
+            var data_2 = new Object();
+            var contact = window.ColumnStacked2DActivity.getContact2_2();
+            eval('data_2='+contact); //各个节点数据
+            window.ColumnStacked2DActivity.logOut("data_2="+data_2.name);
+
+		$(function(){
+			var data = [
+			         	{
+			         		name : data_1.name,
+			         		value: data_1.value,
+			         		color: data_1.color
+			         	},
+			         	{
+			         		name : data_2.name,
+			         		value: data_2.value,
+			         		color: data_2.color
+			         	}
+			         ];
+
+			var chart = new iChart.ColumnStacked2D({
+					render : 'canvasDiv',
+					animation: true, //是否开启动画
+					data: data,
+					labels:["2004年","2005年","2006年","2007年"],
+					title : {
+						text:'全国限额以上连锁零售业情况',
+						color:'#dcd6cb',
+						textAlign:'left',
+						padding:'0 40',
+						font:'微软雅黑',
+						border:{
+							enable:true,
+							width:[0,0,4,0],
+							color:'#698389'
+						},
+						height:40
+					},
+					footnote : {
+						text:'数据来源：中华人民共和国国家统计局',
+						font:'微软雅黑',
+						padding:'0 8',
+						color:'#dcd6cb'
+					},
+					padding:'8 0',
+					width : 800,
+					height : 400,
+					gradient : true,//应用背景渐变
+					gradient_mode:'LinearGradientDownUp',//渐变类型
+					color_factor : 0.1,//渐变因子
+					background_color : '#425154',
+					sub_option:{
+						label:{color:'#f9f9f9',fontsize:12,fontweight:600},
+						border : false
+					},
+					label:{color:'#dcd6cb',font:'微软雅黑',fontsize:12,fontweight:600},
+					legend:{
+						enable:true,
+						background_color : null,
+						line_height:25,
+						color:'#dcd6cb',
+						fontsize:12,
+						font:'微软雅黑',
+						fontweight:600,
+						border : {
+							enable : false
+						}
+					},
+					column_width:80,
+					coordinate:{
+						background_color : 0,
+						grid_color:'#888888',
+						axis : {
+							color : '#c0d0e0',
+							width : 0
+						},
+						scale:[{
+							 position:'left',
+							 scale_enable : false,
+							 start_scale:0,
+							 scale_space:20000,
+							 end_scale:160000,
+							 label:{color:'#dcd6cb',fontsize:11,fontweight:600}
+						}],
+						width:'80%',
+						height:'76%'
+					}
+			});
+
+			//利用自定义组件构造左上侧单位
+			chart.plugin(new iChart.Custom({
+					drawFn:function(){
+						//计算位置
+						var coo = chart.getCoordinate(),
+							x = coo.get('originx'),
+							y = coo.get('originy');
+						//在左上侧的位置，渲染一个单位的文字
+						chart.target.textAlign('end')
+						.textBaseline('bottom')
+						.textFont('600 12px 微软雅黑')
+						.fillText('单位(个)',x,y-14,false,'#be5863')
+
+					}
+			}));
+
+			chart.draw();
+		});
+	</script>
+</head>
+	<body>
+	<p id='canvasDiv'></p>
+	</body>
+</html>

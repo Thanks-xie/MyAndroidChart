@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.Column2DActivity">
+
+    <include android:id="@+id/nav_bar"
+        layout="@layout/action_bar"/>
+    <ScrollView
+        android:layout_below="@+id/nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--图一-->
+            <WebView
+                android:id="@+id/column2d_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_margin="10dp"/>
+            <!--图二-->
+            <WebView
+                android:id="@+id/column2d_2"
+                android:layout_below="@+id/column2d_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_margin="10dp"/>
+            <!--图三-->
+            <WebView
+                android:id="@+id/column2d_3"
+                android:layout_below="@+id/column2d_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_margin="10dp"/>
+            <!--图四-->
+            <WebView
+                android:id="@+id/column2d_4"
+                android:layout_below="@+id/column2d_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_margin="10dp"/>
+            <!--图五-->
+            <WebView
+                android:id="@+id/column2d_5"
+                android:layout_below="@+id/column2d_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_margin="10dp"/>
+            <!--图六-->
+            <WebView
+                android:id="@+id/column2d_6"
+                android:layout_below="@+id/column2d_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_margin="10dp"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Hello World</title>
+		<meta name="Description" content=""/>
+		<meta name="Keywords" content=""/>
+		<script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+		<script type="text/javascript">
+		//获取data1值
+            var data_1 = new Object();
+            var contact = window.ColumnStacked2DActivity.getContact1_1();
+            eval('data_1='+contact); //各个节点数据
+            window.ColumnStacked2DActivity.logOut("data_1="+data_1.name);
+		//获取data2值
+            var data_2 = new Object();
+            var contact = window.ColumnStacked2DActivity.getContact1_2();
+            eval('data_2='+contact); //各个节点数据
+            window.ColumnStacked2DActivity.logOut("data_2="+data_2.name);
+        //获取data2值
+            var data_3 = new Object();
+            var contact = window.ColumnStacked2DActivity.getContact1_3();
+            eval('data_3='+contact); //各个节点数据
+            window.ColumnStacked2DActivity.logOut("data_3="+data_3.name);
+
+		$(function(){
+			var data = [
+			         	{
+			         		name : data_1.name,
+			         		value: data_1.value,
+			         		color: data_1.color
+			         	},
+			         	{
+			         		name : data_2.name,
+			         		value: data_2.value,
+			         		color: data_2.color
+			         	},
+			         	{
+			         		name : data_3.name,
+			         		value: data_3.value,
+			         		color: data_3.color
+			         	}
+			         ];
+
+			var chart = new iChart.ColumnStacked2D({
+					render : 'canvasDiv',
+					animation: true, //是否开启动画
+					data: data,
+					labels:["北京","上海","广州","深圳"],
+					title : {
+						text:'DPS01A型号产品第一季度4城市销售情况',
+						color:'#254d70'
+					},
+					footnote : '数据来源：销售中心',
+					width : 800,
+					height : 400,
+					column_width:90,
+					background_color : '#ffffff',
+					shadow : true,
+					shadow_blur : 2,
+					shadow_color : '#aaaaaa',
+					shadow_offsetx : 1,
+					shadow_offsety : 0,
+					sub_option:{
+						label:{color:'#f9f9f9',fontsize:12,fontweight:600},
+						border : {
+							width : 2,
+							color : '#ffffff'
+						}
+					},
+					label:{color:'#254d70',fontsize:12,fontweight:600},
+					percent:true,//标志为百分比堆积图
+					showpercent:true,
+					decimalsnum:1,
+					legend:{
+						enable:true,
+						background_color : null,
+						line_height:25,
+						color:'#254d70',
+						fontsize:12,
+						fontweight:600,
+						border : {
+							enable : false
+						}
+					},
+					coordinate:{
+						background_color : 0,
+						axis : {
+							color : '#c0d0e0',
+							width : 0
+						},
+						scale:[{
+							 position:'left',
+							 scale_enable : false,
+							 start_scale:0,
+							 scale_space:50,
+							 label:{color:'#254d70',fontsize:11,fontweight:600}
+						}],
+						width:600,
+						height:260
+					}
+			});
+
+			//利用自定义组件构造左侧说明文本
+			chart.plugin(new iChart.Custom({
+					drawFn:function(){
+						//计算位置
+						var coo = chart.getCoordinate(),
+							x = coo.get('originx'),
+							y = coo.get('originy');
+						//在左上侧的位置，渲染一个单位的文字
+						chart.target.textAlign('start')
+						.textBaseline('bottom')
+						.textFont('600 11px Verdana')
+						.fillText('销售量(万件)',x-40,y-12,false,'#254d70');
+
+					}
+			}));
+
+			chart.draw();
+		});
+	</script>
+</head>
+	<body>
+	<p id='canvasDiv'></p>
+	</body>
+</html>

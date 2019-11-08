@@ -41,14 +41,8 @@ public class IChartJSActivity extends BaseActivity {
         dataList.add("ColumnMulti3D");
         dataList.add("ColumnStacked2D");
         dataList.add("ColumnStacked3D");
-        dataList.add("Coordinate2D");
-        dataList.add("Coordinate3D");
-        dataList.add("Donut2D");
         dataList.add("LineBasic2D");
-        dataList.add("Pie2D");
-        dataList.add("Pie3D");
-        dataList.add("Sector2D");
-        dataList.add("Sector3D");
+        
         adapter = new ArrayAdapter(context,android.R.layout.simple_expandable_list_item_1,dataList);
         listView.setAdapter(adapter);
 
@@ -70,40 +64,40 @@ public class IChartJSActivity extends BaseActivity {
                         startActivity(intentBar2D);
                         break;
                     case "BarMulti2D":
-                        Intent BarMulti2D = new Intent(context,BarMulti2DActivity.class);
-                        startActivity(BarMulti2D);
+                        Intent intentBarMulti2D = new Intent(context,BarMulti2DActivity.class);
+                        startActivity(intentBarMulti2D);
                         break;
                     case "BarStacked2D":
-                        Intent BarStacked2D = new Intent(context,BarStacked2DActivity.class);
-                        startActivity(BarStacked2D);
+                        Intent intentBarStacked2D = new Intent(context,BarStacked2DActivity.class);
+                        startActivity(intentBarStacked2D);
                         break;
                     case "Column2D":
+                        Intent intentColumn2D = new Intent(context,Column2DActivity.class);
+                        startActivity(intentColumn2D);
                         break;
                     case "Column3D":
+                        Intent intentColumn3D = new Intent(context,Column3DActivity.class);
+                        startActivity(intentColumn3D);
                         break;
                     case "ColumnMulti2D":
+                        Intent intentColumnMulti2D = new Intent(context,ColumnMulti2DActivity.class);
+                        startActivity(intentColumnMulti2D);
                         break;
                     case "ColumnMulti3D":
+                        Intent intentColumnMulti3D = new Intent(context,ColumnMulti3DActivity.class);
+                        startActivity(intentColumnMulti3D);
                         break;
                     case "ColumnStacked2D":
+                        Intent intentColumnStacked2D = new Intent(context,ColumnStacked2DActivity.class);
+                        startActivity(intentColumnStacked2D);
                         break;
                     case "ColumnStacked3D":
-                        break;
-                    case "Coordinate2D":
-                        break;
-                    case "Coordinate3D":
-                        break;
-                    case "Donut2D":
+                        Intent intentColumnStacked3D = new Intent(context,ColumnStacked3DActivity.class);
+                        startActivity(intentColumnStacked3D);
                         break;
                     case "LineBasic2D":
-                        break;
-                    case "Pie2D":
-                        break;
-                    case "Pie3D":
-                        break;
-                    case "Sector2D":
-                        break;
-                    case "Sector3D":
+                        Intent intentLineBasic2D = new Intent(context,LineBasic2DActivity.class);
+                        startActivity(intentLineBasic2D);
                         break;
                         default:break;
                 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Hello World</title>
+		<meta name="Description" content=""/>
+		<meta name="Keywords" content=""/>
+		<script type="text/javascript" src="ichart.1.2.1.min.js"></script>
+		<script type="text/javascript">
+		//获取data1值
+            var data_1 = new Object();
+            var contact = window.ColumnMulti2DActivity.getContact1_1();
+            eval('data_1='+contact); //各个节点数据
+            window.ColumnMulti2DActivity.logOut("data_1="+data_1.name);
+		//获取data2值
+            var data_2 = new Object();
+            var contact = window.ColumnMulti2DActivity.getContact1_2();
+            eval('data_2='+contact); //各个节点数据
+            window.ColumnMulti2DActivity.logOut("data_2="+data_2.name);
+
+		$(function(){
+				var data = [
+				         	{
+			         		name : data_1.name,
+			         		value: data_1.value,
+			         		color: data_1.color
+			         	},
+			         	{
+			         		name : data_2.name,
+			         		value: data_2.value,
+			         		color: data_2.color
+			         	}
+				         ];
+				var chart = new iChart.ColumnMulti2D({
+						render : 'canvasDiv',
+						animation: true, //是否开启动画
+						data: data,
+						labels:["一月","二月","三月","四月","五月","六月"],
+						title : 'DPS01A型号比DPS01B型号的产品更受用户喜欢',
+						subtitle : '2012上半年DPS01A型号与DPS01B型号的鼠标销售比较,单位:万台',
+						footnote : '数据来源：销售中心',
+						width : 800,
+						height : 400,
+						background_color : '#ffffff',
+						legend:{
+							enable:true,
+							background_color : null,
+							border : {
+								enable : false
+							}
+						},
+						coordinate:{
+							background_color : '#f1f1f1',
+							scale:[{
+								 position:'left',
+								 start_scale:0,
+								 end_scale:140,
+								 scale_space:20
+							}],
+							width:600,
+							height:260
+						}
+				});
+				chart.draw();
+			});
+	</script>
+</head>
+	<body>
+	<p id='canvasDiv'></p>
+	</body>
+</html>

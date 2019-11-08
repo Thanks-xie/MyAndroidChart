@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/android_chart_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.BarStacked2DActivity"></activity>
+        <activity android:name=".activity.LineBasic2DActivity"></activity>
+        <activity android:name=".activity.ColumnStacked3DActivity" />
+        <activity android:name=".activity.ColumnStacked2DActivity" />
+        <activity android:name=".activity.ColumnMulti3DActivity" />
+        <activity android:name=".activity.ColumnMulti2DActivity" />
+        <activity android:name=".activity.Column3DActivity" />
+        <activity android:name=".activity.Column2DActivity" />
+        <activity android:name=".activity.BarStacked2DActivity" />
         <activity android:name=".activity.BarMulti2DActivity" />
         <activity android:name=".activity.Bar2DActivity" />
         <activity android:name=".activity.Area2DActivity" />
