@@ -71,9 +71,6 @@
 ![alt tag](https://github.com/Thanks-xie/MyAndroidChart/blob/master/rendering_image/columnStacked2d.png)
 <br/><br/>
 
-### 基于IChartJS实现的ColumnStacked2D堆积图
-![alt tag](https://github.com/Thanks-xie/MyAndroidChart/blob/master/rendering_image/lineBasic2d.png)
-<br/><br/>
 
 
 
